@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pessoa: one
+  numerocartaosus: 
+  profissao: MyString
+  enderecoprofissional: MyString
+  enderecoresidencial: MyString
+  nomeconjugue: MyString
+  contatoconjugue: MyString
+  string: MyString
+  profissaoconjugue: MyString
+  possuifilhos: false
+  filhosquantidade: 1
+  idadefilhos: MyString
+  observacao: MyString
+  localnascimento: MyString
+  datacadastro: 2017-02-26 16:34:14
+  dataobito: 2017-02-26
+  ativo: false
+
+two:
+  pessoa: two
+  numerocartaosus: 
+  profissao: MyString
+  enderecoprofissional: MyString
+  enderecoresidencial: MyString
+  nomeconjugue: MyString
+  contatoconjugue: MyString
+  string: MyString
+  profissaoconjugue: MyString
+  possuifilhos: false
+  filhosquantidade: 1
+  idadefilhos: MyString
+  observacao: MyString
+  localnascimento: MyString
+  datacadastro: 2017-02-26 16:34:14
+  dataobito: 2017-02-26
+  ativo: false

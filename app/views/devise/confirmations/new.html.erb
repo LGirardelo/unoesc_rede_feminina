@@ -1,0 +1,22 @@
+
+<div class="login-page">
+<h3>Reenviar instruções de confirmação</h3>
+        <div class="form">
+		<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+		  <%= devise_error_messages! %>
+
+		  <div class="field">
+		    <%= f.label :email, 'E-mail' %><br />
+		    <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+		  </div>
+
+		  <div class="actions">
+		    <%= f.submit "Reenviar instruções de confirmação" %>
+		  </div>
+
+
+
+         <%= render "devise/shared/links" %>
+		<% end %>
+  </div>
+</div>

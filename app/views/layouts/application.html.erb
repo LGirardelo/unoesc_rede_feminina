@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rede Feminina</title>
+    <link rel="icon" type="image/jpg" href="http://apsfeiras.com.br/imagens/fita-outubro-rosa.png" />
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+
+   <p class="navbar-text pull-right">
+   <% if user_signed_in? %>
+      <div class="container-fluid menu-topo" style=" position:relative; ">
+        <nav class="navbar">
+          <div class="row">
+            <div class="col-sm-2 img-logo" style=" margin-left:15px; float: left; position: relative;">
+              <img src="http://apsfeiras.com.br/imagens/fita-outubro-rosa.png" width="40"  alt="Rede Feminina" class="img-responsive"/>
+            </div>
+            <div class="col-sm-4" align="left" style="position: relative;">
+              <h2 class="title">Painel Gerencial</h2>
+            </div>
+            <div class="col-sm-2" align="right" style="float: right;">
+              <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to "Logout", destroy_user_session_path, method: :delete%></li>
+              </ul>
+            </div>
+          </div>
+          <hr />
+        </nav>
+      </div>      
+      <style>
+        .menclass{
+          display: none;
+        }
+      </style>
+      <div class="container-fluid conteudo-site">
+        <div class="row" >
+         <div class="col-md-2" >
+          <ul class="menu">
+            <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="/questionarios/new"><i class="fa fa-calendar"></i> Pacientes</a></li>
+            <li><a href="/generos"><i class="fa fa-truck"></i> Solicitação de Produtos</a></li>
+            <li><a href="#/"><i class="fa fa-ticket"></i> Solicitação de Serviços</a></li>
+            <li><a href="/escolaridades"><i class="fa fa-tags"></i> Aniversariantes</a></li>
+            <li><a href="/questaos"><i class="fa fa-line-chart"></i> Relatório de Atividade</a></li>
+            <hr>
+            <li><a href="/questaos"><i class="fa fa-user"></i> Voluntárias</a></li>
+            <li><a href="/questaos"><i class="fa fa-user"></i> Profissionais</a></li>
+            <li><a href="/questaos"><i class="fa fa-window-restore"></i> Serviços</a></li>
+            <li><a href="/questaos"><i class="glyphicon glyphicon-shopping-cart"></i> Produtos</a></li>
+            <li><a href="/questaos"><i class="fa fa-calendar"></i> Convênios</a></li>
+            <li><a href="/questaos"><i class="glyphicon glyphicon-book"></i> Nível de escolaridade</a></li>
+
+          </ul>
+         </div>
+         <div class="col-md-10">                  
+           <div class="panel panel-default">
+             <div class="panel-heading">
+              <span class="text-left titulo">Rede Feminina</span>
+              <span class="pull-right efeito-texto">Logado como: <strong><%= current_user.email %></strong>
+              </span>
+             </div>
+             <div class="panel-body">
+                <%= yield %>
+             </div>
+           </div>
+         </div>
+        </div>
+      </div>
+      <div class="container-fluid rodape">
+        <footer class="footer">
+          <div class="col-md-2 img-logo">
+          </div>
+          <div class="col-md-7">
+            <p>Copyright &copy; 2017 -  Rede Feminina.</p>
+          </div>
+          <div class="col-md-3">               
+          </div>
+        </footer>
+      </div>
+    <% else %>
+      <div class="container-fluid" style="margin-top: 5px; position:relative; ">
+        <nav class="navbar">
+          <div class="row">
+            <div class="col-sm-2 img-logo" style=" margin-left:15px; float: left; position: relative;">
+               <img src="http://apsfeiras.com.br/imagens/fita-outubro-rosa.png" width="40"  alt="Rede Feminina" class="img-responsive"/>
+            </div>
+            <div class="col-lg-4" align="left" style="position: relative;">
+              <h2 class="title">Rede Feminina</h2>
+            </div>
+            <div class="col-sm-2" align="right" style="float: right;">
+              <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to "Cadastre-se", new_user_registration_path, :class => 'navbar-link'  %> </li>
+                <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="container-fluid conteudo-site">
+        <div class="row">
+          <div class="col-md-12">                          
+                <%= yield %>                    
+          </div>
+        </div>
+      </div>        
+    <% end %>  
+  </body>
+</html>
