@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+
+  
+  models_and_attributes: 
+     attributes:
+        question:
+          description: descrição
