@@ -9,6 +9,7 @@ pt-BR:
       pages: "Pages"
   helpers:
     actions: "Ações"
+    questions: "Questões"
     links:
       back: "Voltar"
       cancel: "Cancelar"
