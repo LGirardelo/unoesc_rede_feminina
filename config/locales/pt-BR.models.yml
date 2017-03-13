@@ -1,0 +1,84 @@
+"pt-BR":    
+  activerecord:
+    models:
+      question: Questão
+      quiz: Questionário
+      answer: Resposta
+      people: Pessoas
+      person: Pessoa
+      patient: Paciente
+      profissional: Profissional
+      profissionals: Profissionais
+      questions: Questões
+    attributes:
+      question:
+        description: Descrição
+        created_at: Criado em
+        questions: Questões
+      quiz: 
+        created_at: Criado em
+        date: Data
+        description: Descrição
+      answer:
+        created_at: Criado em 
+        description: Descrição 
+      people:
+        cpf: CPF
+        rg: RG
+        name: Nome
+        home_phone: Telefone
+        cell_phone: Celular
+        birth_date: Data Nascimento
+        sex: Sexo
+        created_at: Criado em
+      person:
+        cpf: CPF
+        rg: RG
+        name: Nome
+        home_phone: Telefone
+        cell_phone: Celular
+        birth_date: Data Nascimento
+        sex: Sexo
+        created_at: Criado em
+      patient:
+        cpf: CPF
+        rg: RG
+        name: Nome
+        home_phone: Telefone
+        cell_phone: Celular
+        birth_date: Data Nascimento
+        sex: Sexo
+        created_at: Criado em
+        sus_card_number: Nº SUS
+        profissional_address: Endereço Profissional
+        home_address: Endereço Residêncial
+        conjugal_name: Nome do Conjugue
+        profession_conjugate: Profissão do Conjugue
+        conjugate_contact: Contato do Conjugue
+        have_children: Possui Filhos
+        number_of_children: Nº de Filhos
+        age_children: Idade dos Filhos
+        note: Observação
+        local_birth: Local de Nascimento
+        date_register: Data de Cadastro
+        date_obtained: Óbito
+        active: Ativo
+        cpf: CPF
+        rg: RG
+      profissional:
+        cpf: CPF
+        rg: RG
+        name: Nome
+        home_phone: Telefone
+        cell_phone: Celular
+        birth_date: Data Nascimento
+        sex: Sexo
+        created_at: Criado em
+        specialization: Especialização
+
+
+
+
+
+
+          

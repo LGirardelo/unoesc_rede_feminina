@@ -22,9 +22,5 @@ en:
       save: "Salvar %{model}"
       new: "Novo %{model}"
       delete: "Excluir %{model}"
-  
-  models_and_attributes: 
-     attributes:
-       question:
-         description: "descrição"
+
          

@@ -5,24 +5,7 @@
         record_invalid: 'A validação falhou: %{errors}'
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
-          has_many: Não é possível excluir o registro pois existem %{record} dependentes
-    models:
-      question: Questões
-      quiz: Questionário
-      answer: Resposta
-    attributes:
-      question:
-        description: Descrição
-        created_at: Criado em
-      quiz: 
-        created_at: Criado em
-        date: Data
-        description: Descrição
-      answer:
-        created_at: Criado em 
-        description: Descrição  
-
-          
+          has_many: Não é possível excluir o registro pois existem %{record} dependentes          
   date:
     abbr_day_names:
     - Dom

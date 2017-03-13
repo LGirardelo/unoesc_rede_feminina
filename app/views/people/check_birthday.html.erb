@@ -1,0 +1,55 @@
+<%- model_class = Person-%>
+
+<div class="page-header">
+  <h1>Aniversariantes do dia</h1>
+</div>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th><%= model_class.human_attribute_name(:name) %></th>
+    <th><%= model_class.human_attribute_name(:cpf) %></th>
+    <th><%= model_class.human_attribute_name(:home_phone) %></th>
+    <th><%= model_class.human_attribute_name(:cell_phone) %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @people.each do |person| %>
+    <%if person.birth_date.day == DateTime.now.day %>
+      <tr>
+        <td><%= person.name %></td>
+        <td><%= person.cpf %></td>
+        <td><%= person.home_phone %></td>
+        <td><%= person.cell_phone %></td>
+      </tr>
+    <%end%>
+  <% end %>
+  </tbody>
+</table>
+
+<div class="page-header">
+  <h1>Aniversariantes do mês</h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:cpf) %></th>
+      <th><%= model_class.human_attribute_name(:home_phone) %></th>
+      <th><%= model_class.human_attribute_name(:cell_phone) %></th>
+      <th>#</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @people.each do |person| %>
+      <%if person.birth_date.month == DateTime.now.month%>
+        <tr>
+          <td><%= person.name %></td>
+          <td><%= person.cpf %></td>
+          <td><%= person.home_phone %></td>
+          <td><%= person.cell_phone %></td>
+          <td><%= person.birth_date.strftime("Aniversário em %d de %b")%></td>
+        </tr>
+      <%end%>
+    <% end %>
+  </tbody>
+</table>

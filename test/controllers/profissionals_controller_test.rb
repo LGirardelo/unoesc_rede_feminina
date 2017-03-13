@@ -17,7 +17,7 @@ class ProfissionalsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create profissional" do
     assert_difference('Profissional.count') do
-      post profissionals_url, params: { profissional: { especializacao: @profissional.especializacao, pessoa_id: @profissional.pessoa_id } }
+      post profissionals_url, params: { profissional: {  } }
     end
 
     assert_redirected_to profissional_url(Profissional.last)
@@ -34,7 +34,7 @@ class ProfissionalsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update profissional" do
-    patch profissional_url(@profissional), params: { profissional: { especializacao: @profissional.especializacao, pessoa_id: @profissional.pessoa_id } }
+    patch profissional_url(@profissional), params: { profissional: {  } }
     assert_redirected_to profissional_url(@profissional)
   end
 

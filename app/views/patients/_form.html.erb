@@ -1,0 +1,174 @@
+<%= form_for @patient, :html => { :class => "form-horizontal patient" } do |f| %>
+
+  <% if @patient.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @patient.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>  
+    
+  <!--Atributos da classe Person--> 
+  <%= f.fields_for :person , @patient.person , :class => 'form-group' do |f| %>
+     <div class="form-group">
+       <%= f.label :name, :class => 'control-label col-lg-2' %>
+       <div class="col-lg-4">
+            <%= f.text_field :name, :class => 'form-control' %>
+            <%=f.error_span(:name) %>      
+       </div>  
+
+       <%= f.label :cpf, :class => 'control-label col-lg-2' %>
+       <div class="col-lg-4">
+            <%= f.text_field :cpf, :class => 'form-control' %>
+            <%=f.error_span(:cpf) %>      
+       </div>  
+     </div>
+
+     <div class="form-group">
+       <%= f.label :rg, :class => 'control-label col-lg-2' %>
+       <div class="col-lg-4">
+            <%= f.text_field :rg, :class => 'form-control' %>
+            <%=f.error_span(:rg) %>      
+       </div>  
+
+       <%= f.label :home_phone, :class => 'control-label col-lg-2' %>
+       <div class="col-lg-4">
+            <%= f.text_field :home_phone, :class => 'form-control' %>
+            <%=f.error_span(:home_phone) %>      
+       </div>  
+     </div>
+
+     <div class="form-group">
+       <%= f.label :cell_phone, :class => 'control-label col-lg-2' %>
+       <div class="col-lg-4">
+            <%= f.text_field :cell_phone, :class => 'form-control' %>
+            <%=f.error_span(:cell_phone) %>      
+       </div>  
+       <%= f.label :birth_date, :class => 'control-label col-lg-2' %>
+       <div class="col-lg-4">
+            <%= f.date_select :birth_date, :class => 'form-control' , :start_year => 1920 %>
+            <%=f.error_span(:birth_date) %>      
+       </div>  
+     </div> 
+
+     <div class="form-group">
+       <%= f.label :sex, :class => 'control-label col-lg-2' %>
+       <div class="col-lg-4">
+            <%= f.select :sex, [[ 'Masculino', 'M'], ['Feminino', 'F']] %>
+            <%=f.error_span(:sex) %>      
+       </div>  
+     </div>
+   <%end%>
+   <!--FIM-->
+
+   <!--Atributos Paciente -->
+   <div class="form-group">
+    <%= f.label :sus_card_number, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= f.text_field :sus_card_number, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:sus_card_number) %>
+
+
+    <%= f.label :profissional_address, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= f.text_field :profissional_address, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:profissional_address) %>
+   </div>
+
+
+   <div class="form-group">
+    <%= f.label :conjugal_name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= f.text_field :conjugal_name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:conjugal_name) %>
+
+
+    <%= f.label :profession_conjugate, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= f.text_field :profession_conjugate, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:profession_conjugate) %>
+   </div>
+
+   <div class="form-group">
+    <%= f.label :conjugate_contact, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= f.text_field :conjugate_contact, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:conjugate_contact) %>
+
+    <%= f.label :have_children, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= select(:patient, :have_children, [['Sim', 1], ['Não', 0]]) %>
+    </div>
+        <%=f.error_span(:have_children) %>
+   </div>
+
+   <div class="form-group">
+    <%= f.label :number_of_children, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= f.text_field :number_of_children, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:number_of_children) %>
+
+    <%= f.label :age_children, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= f.text_field :age_children, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:age_children) %>
+   </div>
+
+ 
+
+   <div class="form-group">
+    <%= f.label :note, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= f.text_field :note, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:note) %>
+
+    <%= f.label :local_birth, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= f.text_field :local_birth, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:local_birth) %>
+   </div>
+
+   <div class="form-group">
+    <%= f.label :date_register, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= f.date_select :date_register, :class => 'form-control' , :start_year => 1920 %>
+    </div>
+    <%=f.error_span(:date_register) %>
+
+
+   </div>
+
+   <div class="form-group">
+    <%= f.label :active, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-2">
+      <%= select(:patient, :active, [['Ativo', 1], ['Inativo', 0]]) %>
+    </div>
+    <%=f.error_span(:active) %>
+   </div>
+   <!--FIM-->
+    
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                patients_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+ 
+<% end %>

@@ -22,3 +22,4 @@ pt-BR:
       save: "Salvar %{model}"
       new: "Cadastrar %{model}"
       delete: "Excluir %{model}"
+

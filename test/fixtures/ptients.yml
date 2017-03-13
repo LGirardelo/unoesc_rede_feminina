@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  susCardNumber: MyString
+  profissionalAddress: MyString
+  homeAddress: MyString
+  conjugalName: MyString
+  professionConjugate: MyString
+  conjugateContact: MyString
+  haveChildren: false
+  numberOfChildren: 
+  ageChildren: MyString
+  note: MyString
+  localBirth: MyString
+  dateRegister: 2017-03-05
+  dateObtained: 2017-03-05
+  active: false
+
+two:
+  susCardNumber: MyString
+  profissionalAddress: MyString
+  homeAddress: MyString
+  conjugalName: MyString
+  professionConjugate: MyString
+  conjugateContact: MyString
+  haveChildren: false
+  numberOfChildren: 
+  ageChildren: MyString
+  note: MyString
+  localBirth: MyString
+  dateRegister: 2017-03-05
+  dateObtained: 2017-03-05
+  active: false

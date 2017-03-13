@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170305033016) do
+ActiveRecord::Schema.define(version: 20170305060356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,45 @@ ActiveRecord::Schema.define(version: 20170305033016) do
     t.datetime "updated_at",  null: false
     t.index ["question_id"], name: "index_answers_on_question_id", using: :btree
     t.index ["quiz_id"], name: "index_answers_on_quiz_id", using: :btree
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string   "sus_card_number"
+    t.string   "profissional_address"
+    t.string   "home_address"
+    t.string   "conjugal_name"
+    t.string   "profession_conjugate"
+    t.string   "conjugate_contact"
+    t.boolean  "have_children"
+    t.integer  "number_of_children"
+    t.string   "age_children"
+    t.string   "note"
+    t.string   "local_birth"
+    t.date     "date_register"
+    t.date     "date_obtained"
+    t.boolean  "active"
+    t.integer  "person_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.string   "name"
+    t.string   "cpf"
+    t.string   "rg"
+    t.string   "home_phone"
+    t.string   "cell_phone"
+    t.date     "birth_date"
+    t.string   "sex"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "profissionals", force: :cascade do |t|
+    t.string   "specialization"
+    t.integer  "person_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "questions", force: :cascade do |t|

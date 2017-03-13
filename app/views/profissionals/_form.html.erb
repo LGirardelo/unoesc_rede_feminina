@@ -1,0 +1,89 @@
+<%= form_for @profissional, :html => { :class => "form-horizontal profissional" } do |f| %>
+
+  <% if @profissional.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@profissional.errors.count, "error") %> prohibited this profissional from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @profissional.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+    <!--Atributos da classe Person-->
+    <%= f.fields_for :person , @profissional.person , :class => 'form-group' do |f| %>
+        <div class="form-group">
+          <%= f.label :name, :class => 'control-label col-lg-2' %>
+          <div class="col-lg-4">
+            <%= f.text_field :name, :class => 'form-control' %>
+            <%=f.error_span(:name) %>
+          </div>
+
+          <%= f.label :cpf, :class => 'control-label col-lg-2' %>
+          <div class="col-lg-4">
+            <%= f.text_field :cpf,  :input_html => { :id => 'cpf' }, :class => 'form-control' %>
+            <%=f.error_span(:cpf) %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :rg, :class => 'control-label col-lg-2' %>
+          <div class="col-lg-4">
+            <%= f.text_field :rg, :class => 'form-control' %>
+            <%=f.error_span(:rg) %>
+          </div>
+
+          <%= f.label :home_phone, :class => 'control-label col-lg-2' %>
+          <div class="col-lg-4">
+            <%= f.text_field :home_phone, :class => 'form-control' %>
+            <%=f.error_span(:home_phone) %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :cell_phone, :class => 'control-label col-lg-2' %>
+          <div class="col-lg-4">
+            <%= f.text_field :cell_phone, :class => 'form-control' %>
+            <%=f.error_span(:cell_phone) %>
+          </div>
+          <%= f.label :birth_date, :class => 'control-label col-lg-2' %>
+          <div class="col-lg-4">
+            <%= f.date_select :birth_date, :class => 'form-control' , :start_year => 1920 %>
+            <%=f.error_span(:birth_date) %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :sex, :class => 'control-label col-lg-2' %>
+          <div class="col-lg-4">
+            <%= f.select :sex, [[ 'Masculino', 'M'], ['Feminino', 'F']] %>
+            <%=f.error_span(:sex) %>
+          </div>
+        </div>
+    <%end%>
+    <!--FIM-->
+
+
+    <div class="form-group">
+      <%= f.label :specialization, :class => 'control-label col-lg-2' %>
+      <div class="col-lg-4">
+        <%= f.text_field :specialization, :class => 'form-control' %>
+      </div>
+      <%=f.error_span(:specialization) %>
+    </div>
+
+
+      <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                profissionals_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

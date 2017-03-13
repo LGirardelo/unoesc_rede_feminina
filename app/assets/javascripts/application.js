@@ -15,4 +15,8 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require jquery.inputmask
+//= require jquery.inputmask.extensions
+//= require jquery.inputmask.numeric.extensions
+//= require jquery.inputmask.date.extensions
 //= require_tree .
